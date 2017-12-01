@@ -1,0 +1,115 @@
+
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{pifont}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 2}
+\author{Jia Guo, Georgios Kontoudis\\ 
+ME5774 Nonlinear Systems Theory\\
+Professor Cornel Sultan} 
+\date{Fall 2017}
+ 
+\maketitle
+\begin{problem}{1} %theorem, exercise, problem, or question 
+Determine if the equilibrium $x_1=x_2=0$ is unstable, stable, asymptotically stable, exponentially stable for
+\begin{align*}
+&\dot{x_1}=x_2-x_1^3+x_1^5 \\
+&\dot{x_2}=-x_1,
+\end{align*}
+where $\textbf{x}=[x_1 \quad x_2]^\top \in \mathbb{R}^2$. State the strongest claim you can make and provide support for the conclusion. You can consider only local properties.
+\end{problem}
+\begin{solution}
+Let us consider a candidate Lyapunov function
+\begin{equation*}
+V(x_1,x_2)=\frac{1}{2}x_1^2+\frac{1}{2}x_2^2,
+\end{equation*}
+that is positive definite $V>0$ for all $x_1,x_2 \in \mathbb{R}^2-\{0 \}$ and $V(0,0)=0$. The rate of change in $V$ yields
+\begin{equation*}
+\begin{aligned}
+& \dot{V}
+&  =
+&&& x_1\dot{x_1}+x_2\dot{x_2}\\
+&& =
+&&& x_1(x_2-x_1^3+x_1^5)+x_2(-x_1)\\
+&& =
+&&& x_1^2(x_1^4-x_1^2).
+\end{aligned}
+\end{equation*} 
+The $x_1,x_2$ have to be confined in $D=\{ \textbf{x} \in \mathbb{R}^2 : -1<x_1<1\}$ that includes the origin, so the function is locally Lipschitz. Then, $x_1^4-x_1^2<0$ for all $x_1,x_2 \in D-\{0 \}$ and $\dot{V}<0$ results a valid Lyapunov function. The origin is an asymptotically stable equilibrium, yet $V$ is radially unbounded,
+\begin{equation*}
+V(x_1,x_2) \rightarrow \infty \mbox{ as } \| \textbf{x}\| \rightarrow \infty.
+\end{equation*}
+Thus the origin is a global asymptotically stable equilibrium.
+\end{solution}
+
+
+\begin{problem}{2} %theorem, exercise, problem, or question
+Jia Guo
+\end{problem}
+
+
+\begin{problem}{3} %theorem, exercise, problem, or question 
+Jia Guo
+\end{problem}
+
+
+\begin{problem}{4} %theorem, exercise, problem, or question 
+For
+\begin{align*}
+&\dot{x_1}=x_1+x_2-x_1(x_1^2+x_2^2) \\
+&\dot{x_2}=-x_1+x_2-x_2(x_1^2+x_2^2),
+\end{align*}
+where $\textbf{x}=[x_1 \quad x_2]^\top \in \mathbb{R}^2$. Show that the equilibrium $x_1=x_2=0$ is unstable using Chetaev's theorem.
+\end{problem}
+\begin{solution}
+For the given system we choose a Lyapunov function candidate
+\begin{equation*}
+V(x_1,x_2)=\frac{1}{2}x_1^2+\frac{1}{2}x_2^2,
+\end{equation*}
+which is positive definite $V>0$ for all $x_1,x_2 \in \mathbb{R}-\{0 \}$ and $V(0,0)=0$. The rate of change in $V$ yields
+\begin{equation*}
+\begin{aligned}
+& \dot{V}
+&  =
+&&& x_1\dot{x_1}+x_2\dot{x_2}\\
+&& =
+&&& x_1(x_1+x_2-x_1(x_1^2+x_2^2))+x_2(-x_1+x_2-x_2(x_1^2+x_2^2))\\
+&& =
+&&& (x_1^2+x_2^2)(1-x_1^2-x_2^2).
+\end{aligned}
+\end{equation*}
+Since $x_1^2+x_2^2>0$ for all $\textbf{x}\in  \mathbb{R}^2$, then in order to satisfy $\dot{V}>0$ we need $1-x_1^2-x_2^2>0$ to hold. This means that $\| \textbf{x}\| <1$. Then, we define the set $B_r=\{ \textbf{x}\in \mathbb{R}^2:\| \textbf{x}\| \leq 0.9 \}\subset U$, where $U=\{\textbf{x}\in B_r : V(\textbf{x})>0 \}$. Therefore, by employing Chetaev's theroem we conclode that $\textbf{x}=0 $ is an unstable equilibrium.
+\end{solution}
+
+\end{document}
+
+
