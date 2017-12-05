@@ -15,7 +15,7 @@ n=input('Select the polynomial order: '); % 2 or 3
 switch n
     case 3
         syms z2 z1 z3
-        p=[1 0 1 -2*z2+z1-z3-2]; % Equation: x^3+x-z2-z1-z3 == 0
+        p=[1 0 1 -2*z2+z1-z3-2]; % Equation: x^3+x-2*z2+z1-z3-2 == 0
         r=roots(p);
         x=simplify(r)      
     case 2
