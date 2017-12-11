@@ -22,7 +22,7 @@ W=x(1)^3*tanh(x(1));
 for i=1:2:5
     xdot(i)= a*x(i)*tanh(x(i))+x(i+1)*tanh(x(i));
     xdot(i+1)= (-a-2*x(i))*(a*x(i)*tanh(x(i))+x(i+1)*tanh(x(i)))...
-        -(x(i)*tanh(x(i)))- K(i)*(x(i+1)+a*x(i)+x(i)^2);  
+        -(x(i)*tanh(x(i)))- K(i)*(x(i+1)+a*x(i)+x(i)^2);  % -a-2*
 end
 xdot=xdot';
 end
