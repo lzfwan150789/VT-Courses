@@ -11,3 +11,4 @@
 
 ## Spring 2018
 * ME6544 - Linear Control Theory - Prof. Vamvoudakis
+* ME6574 - Adaptive Control Systems - Prof. Leonessa
