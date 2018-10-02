@@ -163,9 +163,9 @@ Goal: Given object's twist $\nu$, compute twist of i-$th$ contact on body
 \begin{frame}
 \frametitle{Translational and Angular Velocity }
 Object's points have different translational velocity N 
-\begin{equation*}
-N_{i}^{N}=N^N + \omega^N\times (r_{i}^{N}-{\color{red}r^{\textrm{B}}}) = N^N - (r_i^N-{\color{red}r^{\textrm{B}}})\times \omega^N= N^N - S(r_i^N-{\color{red}r^{\textrm{B}}}) \omega^N,
-\end{equation*}
+{\small \begin{equation*}
+N_{i}^{N}=N_{\textrm{cm}}^{\textrm{N}} + \omega^N\times (r_{i}^{N}-{\color{red}r_{\textrm{cm}}^{\textrm{N}}}) = N_{\textrm{cm}}^{\textrm{N}} - (r_i^N-{\color{red}r_{\textrm{cm}}^{\textrm{N}}})\times \omega^N= N_{\textrm{cm}}^{\textrm{N}} - S(r_i^N-{\color{red}r_{\textrm{cm}}^{\textrm{N}}}) \omega^N,
+\end{equation*}}
 S: Skew-symmetric matrix 
 \begin{equation*}
 S(a)=\begin{bmatrix}
@@ -195,7 +195,7 @@ Angular velocity $\omega$ of all points on an object is the same
 \item $X^{N}_{i}=X^N + Rr_{i}^{N}$ \vspace{.2cm}
 \item $N^{N}_{i}=N^N + \frac{dR}{dt} r_{i}^{N}=N^N + \frac{dR}{dt} R^{\intercal}Rr_{i}^{N}=N^N + \frac{dR}{dt} R^{\intercal}r_{i}= N^N + \Omega r_{i}$ \vspace{.2cm}
 \item $\Omega r=\omega\times r $, $\Omega$: angular velocity tensor \vspace{.2cm}
-\item $N_{i}^{N}=N^N + \omega^N\times (r_{i}^{N}-{\color{red}r^{\textrm{B}}})$
+\item $N_{i}^{N}=N_{\textrm{cm}}^{\textrm{N}} + \omega^N\times (r_{i}^{N}-{\color{red}r_{\textrm{cm}}^{\textrm{N}}})$
 \end{itemize}
 
 \column{.40\textwidth} 
@@ -215,7 +215,7 @@ N_{i}^{N}\\
 \omega_{i}^{N}
 \end{bmatrix}=
 \begin{bmatrix}
-I_{3x3} & S(r_{i}^{N}-{\color{red}r^{\textrm{B}}})^{\intercal}\\
+I_{3x3} & S(r_{i}^{N}-{\color{red}r_{\textrm{cm}}^{\textrm{N}}})^{\intercal}\\
 0_{3x3} & I_{3x3} 
 \end{bmatrix}
 \begin{bmatrix}
@@ -238,7 +238,7 @@ N_{i,obj}^{C_i}\\
 0 &(R_{C_i}^{N})^{\intercal} 
 \end{bmatrix}
 \begin{bmatrix}
-I & S(r_{i}^{N}-{\color{red}r^{\textrm{B}}})^{\intercal}\\
+I & S(r_{i}^{N}-{\color{red}r_{\textrm{cm}}^{\textrm{N}}})^{\intercal}\\
 0 & I
 \end{bmatrix}
 \begin{bmatrix}
