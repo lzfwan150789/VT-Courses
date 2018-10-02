@@ -224,7 +224,7 @@ The first order or necessary condition for optimality is called \textit{Maximum 
 \dot{x} = f(x,u,t), \hspace{.2cm} x\in \mathbb{R}^n, \hspace{.2cm} u\in \mathbb{R}^m 
 \end{equation*} 
 \item Set goal state $x_G$, where $f(x_G,u_G)=0$, and $\bar{x}=x-x_G$, $\bar{u}=u-u_G$
-\item Linearize around ($x_G, u_G$), $\bar{x}\approx A\bar{x}(t)+B\bar{u}(t)$ 
+\item Linearize around ($x_G, u_G$), $\dot{\bar{x}}\approx A\bar{x}(t)+B\bar{u}(t)$ 
 \item Infinite horizon LQR minimum energy cost-to-go fcn (performance index)
 \begin{equation*}
 J_{\infty}= \frac{1}{2}\int_0^{\infty} [ \bar{x}^{\intercal}(t)Q\bar{x}(t)+\bar{u}^{\intercal}(t)R\bar{u}(t)]dt,
@@ -339,7 +339,7 @@ subject to & $\dot{J}^{\ast}(\bar{x})+ h(\bar{x})(\rho - J^{\ast}(\bar{x}))\leq 
 \begin{center}
 \begin{tabular}{ r l }
 find & $h(\bar{x})$ \\
-subject to & $\hat{\dot{J}}(\bar{x})+ h(\bar{x})(\rho - \hat{J}^{\ast}(\bar{x}))\leq -\epsilon ||\bar{x}||_2^2$\\
+subject to & $\dot{\hat{J}}(\bar{x})+ h(\bar{x})(\rho - \hat{J}^{\ast}(\bar{x}))\leq -\epsilon ||\bar{x}||_2^2$\\
  & $h(\bar{x})\geq 0$
 \end{tabular}
 \end{center}
@@ -355,7 +355,7 @@ Set a convex optimization problem for the region of attraction
 \begin{center}
 \begin{tabular}{ r l }
 max & $\rho$ \\
-subject to & $\hat{\dot{J}}^{\ast}(\bar{x})+ h(\bar{x})(\rho - \hat{J}^{\ast}(\bar{x}))\leq -\epsilon ||\bar{x}||_2^2$\\
+subject to & $\dot{\hat{J}}^{\ast}(\bar{x})+ h(\bar{x})(\rho - \hat{J}^{\ast}(\bar{x}))\leq -\epsilon ||\bar{x}||_2^2$\\
  & $h(\bar{x})\geq 0$\\
  & $\rho>0$
 \end{tabular}
